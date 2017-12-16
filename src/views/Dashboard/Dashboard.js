@@ -444,7 +444,7 @@ class Dashboard extends Component {
         <br />
 
         <Row>
-          <Col xs="3" md="3" xl="3">
+          <Col xs="3" md="3" xl="3" className="justify-content-center">
             <Pocket/>
           </Col>
           <Col xs="9" md="9" xl="9">
