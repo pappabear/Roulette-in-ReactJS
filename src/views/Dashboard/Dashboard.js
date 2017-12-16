@@ -23,6 +23,7 @@ import {
   Table
 } from 'reactstrap';
 import Last20 from "./Last20.js";
+import Pocket from "./Pocket.js";
 
 const brandPrimary = '#20a8d8';
 const brandSuccess = '#4dbd74';
@@ -443,8 +444,7 @@ class Dashboard extends Component {
 
         <Row>
           <Col>
-            <p>Pocket</p>
-            <Badge pill color="danger" styleName="{size:32pt;}">1</Badge>
+            <Pocket/>
           </Col>
         </Row>
 
