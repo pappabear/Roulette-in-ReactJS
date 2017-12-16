@@ -14,20 +14,25 @@ class Last20 extends Component {
         </CardHeader>
         <CardBody>
             <Badge pill color="danger">1</Badge>
-            <Badge pill color="info">6</Badge>
+            <Badge pill color="secondary">6</Badge>
             <Badge pill color="success">00</Badge>
-            <Badge pill color="danger" styleName="{size:32pt;}">32</Badge>
-            <Badge pill color="danger" styleName="{size:32pt;}">36</Badge>
+            <Badge pill color="danger">32</Badge>
+            <Badge pill color="danger">36</Badge>
             <Badge pill color="danger">1</Badge>
-            <Badge pill color="info">6</Badge>
+            <Badge pill color="secondary">6</Badge>
             <Badge pill color="success">00</Badge>
-            <Badge pill color="danger" styleName="{size:32pt;}">32</Badge>
-            <Badge pill color="danger" styleName="{size:32pt;}">36</Badge>
+            <Badge pill color="danger">32</Badge>
+            <Badge pill color="danger">36</Badge>
             <Badge pill color="danger">1</Badge>
-            <Badge pill color="info">6</Badge>
+            <Badge pill color="secondary">6</Badge>
             <Badge pill color="success">00</Badge>
-            <Badge pill color="danger" styleName="{size:32pt;}">32</Badge>
-            <Badge pill color="danger" styleName="{size:32pt;}">36</Badge>
+            <Badge pill color="danger">32</Badge>
+            <Badge pill color="danger">36</Badge>
+            <Badge pill color="success">00</Badge>
+            <Badge pill color="danger">32</Badge>
+            <Badge pill color="danger">36</Badge>
+            <Badge pill color="danger">1</Badge>
+            <Badge pill color="secondary">6</Badge>
         </CardBody>
         </Card>
     );

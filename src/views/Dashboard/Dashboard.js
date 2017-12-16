@@ -24,6 +24,7 @@ import {
 } from 'reactstrap';
 import Last20 from "./Last20.js";
 import Pocket from "./Pocket.js";
+import Bet from "./Bet.js";
 
 const brandPrimary = '#20a8d8';
 const brandSuccess = '#4dbd74';
@@ -443,16 +444,11 @@ class Dashboard extends Component {
         <br />
 
         <Row>
-          <Col>
+          <Col xs="3" md="3" xl="3">
             <Pocket/>
           </Col>
-        </Row>
-
-        <br />
-
-        <Row>
-          <Col>
-            <p>Place Your Bet w/ "spin" button</p>
+          <Col xs="9" md="9" xl="9">
+            <Bet/>
           </Col>
         </Row>
 
