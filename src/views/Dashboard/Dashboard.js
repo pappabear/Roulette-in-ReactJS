@@ -25,6 +25,7 @@ import {
 import Last20 from "./Last20.js";
 import Pocket from "./Pocket.js";
 import Bet from "./Bet.js";
+import {POCKETS, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";
 
 const brandPrimary = '#20a8d8';
 const brandSuccess = '#4dbd74';
