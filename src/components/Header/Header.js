@@ -42,15 +42,10 @@ class Header extends Component {
         <NavbarToggler className="d-lg-none" onClick={this.mobileSidebarToggle}>
           <span className="navbar-toggler-icon"></span>
         </NavbarToggler>
-        <NavbarBrand href="#"></NavbarBrand>
+        <NavbarBrand href="#">ROULETTE</NavbarBrand>
         <NavbarToggler className="d-md-down-none" onClick={this.sidebarToggle}>
           <span className="navbar-toggler-icon"></span>
         </NavbarToggler>
-        <Nav className="d-md-down-none" navbar>
-          <NavItem className="px-3">
-            <NavLink href="#">ROULETTE</NavLink>
-          </NavItem>
-        </Nav>
         <Nav className="ml-auto" navbar>
         </Nav>
         <NavbarToggler className="d-md-down-none" onClick={this.asideToggle}>
