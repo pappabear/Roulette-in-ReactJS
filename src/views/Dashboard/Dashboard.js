@@ -57,11 +57,20 @@ class Dashboard extends Component {
   {
     console.log("User cliked SPIN");
     var n = Math.floor(Math.random() * 38);
+    var l = this.state.last20;
+    l.push(n);
     this.setState({
-      numberSpun: n
+      numberSpun: n,
+      last20: l
     });
 
+    /*
     console.log("Number spun is " + POCKETS[n] + " " + COLORS[n]);
+    for (var i=0; i<this.state.last20.length; i++)
+      console.log("l=" + l[i]);
+    for (var i=0; i<this.state.last20.length; i++)
+      console.log("state=" + this.state.last20[i]);
+    */
   }
 
 
@@ -72,7 +81,7 @@ class Dashboard extends Component {
       <div className="animated fadeIn">
         <Row>
           <Col>
-            <Last20/>
+            <Last20 last20={this.state.last20}/>
           </Col>
         </Row>
 
