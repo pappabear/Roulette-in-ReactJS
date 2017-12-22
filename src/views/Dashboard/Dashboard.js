@@ -63,16 +63,7 @@ class Dashboard extends Component {
       numberSpun: n,
       last20: l
     });
-
-    /*
-    console.log("Number spun is " + POCKETS[n] + " " + COLORS[n]);
-    for (var i=0; i<this.state.last20.length; i++)
-      console.log("l=" + l[i]);
-    for (var i=0; i<this.state.last20.length; i++)
-      console.log("state=" + this.state.last20[i]);
-    */
   }
-
 
 
   render() {
