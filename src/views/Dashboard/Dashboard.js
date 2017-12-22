@@ -80,7 +80,7 @@ class Dashboard extends Component {
 
         <Row>
           <Col xs="3" md="3" xl="3">
-            <Pocket/>
+            <Pocket numberSpun={this.state.numberSpun}/>
           </Col>
           <Col xs="9" md="9" xl="9">
             <Bet/>
