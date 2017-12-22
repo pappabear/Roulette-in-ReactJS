@@ -38,16 +38,32 @@ class Dashboard extends Component {
     super(props);
 
     this.toggle = this.toggle.bind(this);
+    this.spin = this.spin.bind(this);
     this.state = {
-      dropdownOpen: false
+      dropdownOpen: false,
+      numberSpun: '',
+      last20: []
     };
   }
 
-  toggle() {
+  toggle() 
+  {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
     });
   }
+
+  spin() 
+  {
+    console.log("User cliked SPIN");
+    var n = Math.floor(Math.random() * 38);
+    this.setState({
+      numberSpun: n
+    });
+
+    console.log("Number spun is " + POCKETS[n] + " " + COLORS[n]);
+  }
+
 
 
   render() {
@@ -68,6 +84,23 @@ class Dashboard extends Component {
           </Col>
           <Col xs="9" md="9" xl="9">
             <Bet/>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xs="12" md="12" xl="12">
+            <Card>
+                <CardBody>
+                    <p>
+                    <Button outline 
+                            color="primary" 
+                            block
+                            onClick={this.spin}
+                            >
+                          Spin!</Button>
+                    </p>
+                </CardBody>
+            </Card>
           </Col>
         </Row>
 
