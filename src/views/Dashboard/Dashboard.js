@@ -43,7 +43,8 @@ class Dashboard extends Component {
       dropdownOpen: false,
       numberSpun: '',
       last20: [],
-      winningBets: []
+      winningBets: [],
+      balance: 200
     };
   }
 
@@ -65,15 +66,15 @@ class Dashboard extends Component {
       var l = this.state.last20;
       l.push(n);
 
-      // determine what the winning bets were based on the pocketed number
+      // determine what all the winning bets were based on the pocketed number
       var w = [];
       w.push(POCKETS[n].toString());
       if (FIRST12.includes(POCKETS[n]))
-        w.push("FIRST 12");
+        w.push("FIRST12");
       if (SECOND12.includes(POCKETS[n]))
-        w.push("SECOND 12");
+        w.push("SECOND12");
       if (THIRD12.includes(POCKETS[n]))
-        w.push("THIRD 12");
+        w.push("THIRD12");
       if (ODD.includes(POCKETS[n]))
         w.push("ODD");
       if (EVEN.includes(POCKETS[n]))
@@ -83,11 +84,11 @@ class Dashboard extends Component {
       if (BLACK.includes(POCKETS[n]))
         w.push("BLACK");
       if (FIRSTAVENUE.includes(POCKETS[n]))
-        w.push("FIRST AVE");
+        w.push("FIRSTAVENUE");
       if (SECONDAVENUE.includes(POCKETS[n]))
-        w.push("SECOND AVE");
+        w.push("SECONDAVENUE");
       if (THIRDAVENUE.includes(POCKETS[n]))
-        w.push("THIRD AVE");
+        w.push("THIRDAVENUE");
 
     //update the state so it can propogate to the rest of the app
     this.setState({
@@ -115,7 +116,9 @@ class Dashboard extends Component {
             <Pocket numberSpun={this.state.numberSpun}/>
           </Col>
           <Col xs="9" md="9" xl="9">
-            <Bet winningBets={this.state.winningBets}/>
+            <Bet winningBets={this.state.winningBets}
+                 balance={this.state.balance}
+                 />
           </Col>
         </Row>
 
