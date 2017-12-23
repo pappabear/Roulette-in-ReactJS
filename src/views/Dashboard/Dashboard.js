@@ -42,7 +42,8 @@ class Dashboard extends Component {
     this.state = {
       dropdownOpen: false,
       numberSpun: '',
-      last20: []
+      last20: [],
+      winningBets: []
     };
   }
 
@@ -55,13 +56,44 @@ class Dashboard extends Component {
 
   spin() 
   {
-    console.log("User cliked SPIN");
-    var n = Math.floor(Math.random() * 38);
-    var l = this.state.last20;
-    l.push(n);
+      //console.log("User cliked SPIN");
+      
+      // set the winning number
+      var n = Math.floor(Math.random() * 38);
+
+      // add it to the last20 list
+      var l = this.state.last20;
+      l.push(n);
+
+      // determine what the winning bets were based on the pocketed number
+      var w = [];
+      w.push(POCKETS[n].toString());
+      if (FIRST12.includes(POCKETS[n]))
+        w.push("FIRST 12");
+      if (SECOND12.includes(POCKETS[n]))
+        w.push("SECOND 12");
+      if (THIRD12.includes(POCKETS[n]))
+        w.push("THIRD 12");
+      if (ODD.includes(POCKETS[n]))
+        w.push("ODD");
+      if (EVEN.includes(POCKETS[n]))
+        w.push("EVEN");
+      if (RED.includes(POCKETS[n]))
+        w.push("RED");
+      if (BLACK.includes(POCKETS[n]))
+        w.push("BLACK");
+      if (FIRSTAVENUE.includes(POCKETS[n]))
+        w.push("FIRST AVE");
+      if (SECONDAVENUE.includes(POCKETS[n]))
+        w.push("SECOND AVE");
+      if (THIRDAVENUE.includes(POCKETS[n]))
+        w.push("THIRD AVE");
+
+    //update the state so it can propogate to the rest of the app
     this.setState({
       numberSpun: n,
-      last20: l
+      last20: l,
+      winningBets: w
     });
   }
 
@@ -83,7 +115,7 @@ class Dashboard extends Component {
             <Pocket numberSpun={this.state.numberSpun}/>
           </Col>
           <Col xs="9" md="9" xl="9">
-            <Bet/>
+            <Bet winningBets={this.state.winningBets}/>
           </Col>
         </Row>
 
