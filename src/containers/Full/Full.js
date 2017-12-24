@@ -5,7 +5,7 @@ import Header from '../../components/Header/';
 import Sidebar from '../../components/Sidebar/';
 import Aside from '../../components/Aside/';
 import Footer from '../../components/Footer/';
-import Dashboard from '../../views/Dashboard/';
+import GameTable from '../../views/Game/GameTable.js';
 import Charts from '../../views/Charts/';
 import Widgets from '../../views/Widgets/';
 
@@ -34,7 +34,7 @@ class Full extends Component {
             <p>&nbsp;</p>
             <Container fluid>
               <Switch>
-                <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
+                <Route path="/roulette" name="GameTable" component={GameTable}/>
                 <Route path="/components/buttons" name="Buttons" component={Buttons}/>
                 <Route path="/components/cards" name="Cards" component={Cards}/>
                 <Route path="/components/forms" name="Forms" component={Forms}/>
@@ -47,7 +47,7 @@ class Full extends Component {
                 <Route path="/icons/simple-line-icons" name="Simple Line Icons" component={SimpleLineIcons}/>
                 <Route path="/widgets" name="Widgets" component={Widgets}/>
                 <Route path="/charts" name="Charts" component={Charts}/>
-                <Redirect from="/" to="/dashboard"/>
+                <Redirect from="/" to="/roulette"/>
               </Switch>
             </Container>
           </main>

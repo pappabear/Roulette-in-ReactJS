@@ -34,7 +34,7 @@ const brandInfo = '#63c2de';
 const brandWarning = '#f8cb00';
 const brandDanger = '#f86c6b';
 
-class Dashboard extends Component {
+class GameTable extends Component {
   constructor(props) {
     super(props);
 
@@ -164,4 +164,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+export default GameTable;
