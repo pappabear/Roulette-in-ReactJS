@@ -95,17 +95,13 @@ class Bet extends Component {
                             {this.renderWinningBets()}
                         </ul>
                     </Col>
-                    <Col xs="4" md="4" xl="4">
+                    <Col xs="6" md="6" xl="6">
                         Your bets:
                         <p></p>
                         <Form action="" method="post" className="form-horizontal">
                             {this.renderMyBets()}
                         </Form>
 
-                    </Col>
-                    <Col xs="5" md="5" xl="5">
-                        Balance:
-                        <h1>$ {this.props.balance}</h1>
                     </Col>
                 </Row>
             </CardBody>

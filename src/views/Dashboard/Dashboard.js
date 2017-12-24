@@ -25,6 +25,7 @@ import {
 import Last20 from "./Last20.js";
 import Pocket from "./Pocket.js";
 import Bet from "./Bet.js";
+import Balance from "./Balance.js";
 import {WHEEL, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";
 
 const brandPrimary = '#20a8d8';
@@ -130,11 +131,14 @@ class Dashboard extends Component {
           <Col xs="3" md="3" xl="3">
             <Pocket numberSpun={this.state.numberSpun}/>
           </Col>
-          <Col xs="9" md="9" xl="9">
+          <Col xs="6" md="6" xl="6">
             <Bet winningBets={this.state.winningBets}
                  balance={this.state.balance}
                  registerMyBet={this.registerMyBet}
                  />
+          </Col>
+          <Col xs="3" md="3" xl="3">
+            <Balance balance={this.state.balance}/>
           </Col>
         </Row>
 
