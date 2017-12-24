@@ -78,10 +78,6 @@ class BettingLayout extends Component {
 
   render() {
 
-    var results='';
-    for (var i=0; i<this.props.winningBets.length; i++)
-        results += this.props.winningBets + "<br />";
-
     return (
         <Card>
             <CardHeader>
@@ -96,8 +92,8 @@ class BettingLayout extends Component {
                         </ul>
                     </Col>
                     <Col xs="6" md="6" xl="6">
-                        Your bets:
-                        <p></p>
+                        Your bet(s) this round:
+                        <h3>$ {this.props.myBetsTotal}</h3>
                         <Form action="" method="post" className="form-horizontal">
                             {this.renderMyBets()}
                         </Form>

@@ -26,7 +26,7 @@ import Last20 from "./Last20.js";
 import Pocket from "./Pocket.js";
 import BettingLayout from "./BettingLayout.js";
 import Balance from "./Balance.js";
-import {WHEEL, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";
+import {BETS, WHEEL, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";
 
 const brandPrimary = '#20a8d8';
 const brandSuccess = '#4dbd74';
@@ -47,6 +47,7 @@ class GameTable extends Component {
       last20: [],
       winningBets: [],
       myBets: [],
+      myBetsTotal: 0,
       balance: 200
     };
   }
@@ -63,12 +64,19 @@ class GameTable extends Component {
     var m = this.state.myBets;
     var myBet = {bet: bet, amount: amount};
     m.push(myBet);
-    console.log("Updated bet " + bet + " " + amount);
-    console.log(m.length + " total bets");
+    //console.log("Updated bet " + bet + " " + amount);
+    //console.log(m.length + " total bets");
     this.setState({
       myBets: m
     });
-
+    
+    var t=0;
+    for (var i=0; i<this.state.myBets.length; i++)
+      t += this.state.myBets[i].amount;
+    this.setState({
+      myBetsTotal: t
+      });
+  
   }
 
   spin() 
@@ -134,6 +142,7 @@ class GameTable extends Component {
           <Col xs="6" md="6" xl="6">
             <BettingLayout winningBets={this.state.winningBets}
                            registerMyBet={this.registerMyBet}
+                           myBetsTotal={this.state.myBetsTotal}
                  />
           </Col>
           <Col xs="3" md="3" xl="3">
