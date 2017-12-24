@@ -24,7 +24,7 @@ import {
 } from 'reactstrap';
 import Last20 from "./Last20.js";
 import Pocket from "./Pocket.js";
-import Bet from "./Bet.js";
+import BettingLayout from "./BettingLayout.js";
 import Balance from "./Balance.js";
 import {WHEEL, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";
 
@@ -132,9 +132,8 @@ class GameTable extends Component {
             <Pocket numberSpun={this.state.numberSpun}/>
           </Col>
           <Col xs="6" md="6" xl="6">
-            <Bet winningBets={this.state.winningBets}
-                 balance={this.state.balance}
-                 registerMyBet={this.registerMyBet}
+            <BettingLayout winningBets={this.state.winningBets}
+                           registerMyBet={this.registerMyBet}
                  />
           </Col>
           <Col xs="3" md="3" xl="3">
