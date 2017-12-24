@@ -28,7 +28,7 @@ import {
     InputGroupAddon,
     InputGroupButton
   } from 'reactstrap';  
-import {WINNERS, POCKETS, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";  
+import {BOARD, WHEEL, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";  
 
 class Bet extends Component {
 
@@ -49,13 +49,16 @@ class Bet extends Component {
 
     handleBlur(e)
     {
-        console.log("e.target=" + e.target.name + " " + e.target.value);
-        this.props.registerMyBet(e.target.name, e.target.value);
+        if (parseInt(e.target.value) > 0)
+        {
+            console.log("e.target=" + e.target.name + " " + e.target.value);
+            this.props.registerMyBet(e.target.name, parseInt(e.target.value));
+        }
     }
 
     renderMyBets()
     {
-        return WINNERS.map((o, i) =>
+        return BOARD.map((o, i) =>
             <FormGroup key={i}>
                 <div className="controls">
                     <InputGroup className="input-prepend">

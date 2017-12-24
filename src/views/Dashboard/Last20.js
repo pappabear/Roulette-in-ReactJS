@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Badge, Card, CardBody, CardHeader} from 'reactstrap';
-import {POCKETS, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";  
+import {WHEEL, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";  
 
 class Last20 extends Component {
 
@@ -31,7 +31,7 @@ class Last20 extends Component {
         var o=[];
 
         return this.props.last20.map((o, i) =>
-            <Badge pill color={this.getColor(o)} key={i} >{POCKETS[o]}</Badge>
+            <Badge pill color={this.getColor(o)} key={i} >{WHEEL[o]}</Badge>
         )
   
     }

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Badge, Card, CardBody, CardHeader} from 'reactstrap';
-import {POCKETS, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";
+import {WHEEL, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";
 
-var pocketStyle = {
+var wheelStyle = {
     fontSize: '80px'
     };
 
@@ -28,7 +28,7 @@ class Pocket extends Component {
                 Pocket
             </CardHeader>
             <CardBody>
-                <Badge pill color={color} style={pocketStyle}>{POCKETS[this.props.numberSpun]}</Badge>
+                <Badge pill color={color} style={wheelStyle}>{WHEEL[this.props.numberSpun]}</Badge>
             </CardBody>
         </Card>
     );

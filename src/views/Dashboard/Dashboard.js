@@ -25,7 +25,7 @@ import {
 import Last20 from "./Last20.js";
 import Pocket from "./Pocket.js";
 import Bet from "./Bet.js";
-import {POCKETS, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";
+import {WHEEL, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";
 
 const brandPrimary = '#20a8d8';
 const brandSuccess = '#4dbd74';
@@ -83,26 +83,26 @@ class Dashboard extends Component {
 
       // determine what all the winning bets were based on the pocketed number
       var w = [];
-      w.push(POCKETS[n].toString());
-      if (FIRST12.includes(POCKETS[n]))
+      w.push(WHEEL[n].toString());
+      if (FIRST12.includes(WHEEL[n]))
         w.push("FIRST12");
-      if (SECOND12.includes(POCKETS[n]))
+      if (SECOND12.includes(WHEEL[n]))
         w.push("SECOND12");
-      if (THIRD12.includes(POCKETS[n]))
+      if (THIRD12.includes(WHEEL[n]))
         w.push("THIRD12");
-      if (ODD.includes(POCKETS[n]))
+      if (ODD.includes(WHEEL[n]))
         w.push("ODD");
-      if (EVEN.includes(POCKETS[n]))
+      if (EVEN.includes(WHEEL[n]))
         w.push("EVEN");
-      if (RED.includes(POCKETS[n]))
+      if (RED.includes(WHEEL[n]))
         w.push("RED");
-      if (BLACK.includes(POCKETS[n]))
+      if (BLACK.includes(WHEEL[n]))
         w.push("BLACK");
-      if (FIRSTAVENUE.includes(POCKETS[n]))
+      if (FIRSTAVENUE.includes(WHEEL[n]))
         w.push("FIRSTAVENUE");
-      if (SECONDAVENUE.includes(POCKETS[n]))
+      if (SECONDAVENUE.includes(WHEEL[n]))
         w.push("SECONDAVENUE");
-      if (THIRDAVENUE.includes(POCKETS[n]))
+      if (THIRDAVENUE.includes(WHEEL[n]))
         w.push("THIRDAVENUE");
 
     //update the state so it can propogate to the rest of the app
