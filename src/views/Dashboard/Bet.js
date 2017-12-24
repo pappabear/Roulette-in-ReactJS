@@ -36,6 +36,7 @@ class Bet extends Component {
         super(props);
         this.renderWinningBets = this.renderWinningBets.bind(this);
         this.renderMyBets = this.renderMyBets.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
       }
 
     renderWinningBets()
@@ -46,6 +47,12 @@ class Bet extends Component {
   
     }
 
+    handleBlur(e)
+    {
+        console.log("e.target=" + e.target.name + " " + e.target.value);
+        this.props.registerMyBet(e.target.name, e.target.value);
+    }
+
     renderMyBets()
     {
         return WINNERS.map((o, i) =>
@@ -53,7 +60,12 @@ class Bet extends Component {
                 <div className="controls">
                     <InputGroup className="input-prepend">
                         <InputGroupAddon>{o}</InputGroupAddon>
-                        <Input id="{o}" size="2" type="text"/>
+                        <Input id={o}
+                               name={o}
+                               onBlur={this.handleBlur} 
+                               size="2" 
+                               type="text"
+                               />
                     </InputGroup>
                 </div>
             </FormGroup>

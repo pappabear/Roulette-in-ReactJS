@@ -39,11 +39,13 @@ class Dashboard extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.spin = this.spin.bind(this);
+    this.registerMyBet = this.registerMyBet.bind(this);
     this.state = {
       dropdownOpen: false,
       numberSpun: '',
       last20: [],
       winningBets: [],
+      myBets: [],
       balance: 200
     };
   }
@@ -53,6 +55,19 @@ class Dashboard extends Component {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
     });
+  }
+
+  registerMyBet(bet, amount)
+  {
+    var m = this.state.myBets;
+    var myBet = {bet: bet, amount: amount};
+    m.push(myBet);
+    console.log("Updated bet " + bet + " " + amount);
+    console.log(m.length + " total bets");
+    this.setState({
+      myBets: m
+    });
+
   }
 
   spin() 
@@ -118,6 +133,7 @@ class Dashboard extends Component {
           <Col xs="9" md="9" xl="9">
             <Bet winningBets={this.state.winningBets}
                  balance={this.state.balance}
+                 registerMyBet={this.registerMyBet}
                  />
           </Col>
         </Row>
