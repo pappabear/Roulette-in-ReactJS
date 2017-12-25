@@ -193,6 +193,25 @@ class GameTable extends Component {
       <div className="animated fadeIn">
 
         <Row>
+          <Col>
+            <Last20 last20={this.state.last20}/>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xs="3" md="3" xl="3">
+            <Pocket numberSpun={this.state.numberSpun}/>
+            <Balance balance={this.state.balance}/>
+          </Col>
+          <Col xs="9" md="9" xl="9">
+            <BettingLayout winningBets={this.state.winningBets}
+                           registerMyBet={this.registerMyBet}
+                           myBetsTotal={this.state.myBetsTotal}
+                 />
+          </Col>
+        </Row>
+
+        <Row>
           <Col xs="12" md="12" xl="12">
             <Card>
                 <CardBody>
@@ -206,29 +225,6 @@ class GameTable extends Component {
                     </p>
                 </CardBody>
             </Card>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <Last20 last20={this.state.last20}/>
-          </Col>
-        </Row>
-
-        <br />
-
-        <Row>
-          <Col xs="3" md="3" xl="3">
-            <Pocket numberSpun={this.state.numberSpun}/>
-          </Col>
-          <Col xs="6" md="6" xl="6">
-            <BettingLayout winningBets={this.state.winningBets}
-                           registerMyBet={this.registerMyBet}
-                           myBetsTotal={this.state.myBetsTotal}
-                 />
-          </Col>
-          <Col xs="3" md="3" xl="3">
-            <Balance balance={this.state.balance}/>
           </Col>
         </Row>
 
