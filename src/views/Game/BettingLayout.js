@@ -85,12 +85,6 @@ class BettingLayout extends Component {
             </CardHeader>
             <CardBody>
                 <Row>
-                    <Col xs="3" md="3" xl="3">
-                        Winning bets:
-                        <ul>
-                            {this.renderWinningBets()}
-                        </ul>
-                    </Col>
                     <Col xs="6" md="6" xl="6">
                         Your bet(s) this round:
                         <h3>$ {this.props.myBetsTotal}</h3>

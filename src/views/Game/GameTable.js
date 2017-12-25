@@ -157,7 +157,6 @@ class GameTable extends Component {
         payouts.push(3);
       }
 
-
     // determine if the user had any winning bets
     var winnings=0;
     for (var i=0; i<this.state.myBets.length; i++)
@@ -192,6 +191,24 @@ class GameTable extends Component {
 
     return (
       <div className="animated fadeIn">
+
+        <Row>
+          <Col xs="12" md="12" xl="12">
+            <Card>
+                <CardBody>
+                    <p>
+                    <Button outline 
+                            color="primary" 
+                            block
+                            onClick={this.spin}
+                            >
+                          Spin!</Button>
+                    </p>
+                </CardBody>
+            </Card>
+          </Col>
+        </Row>
+
         <Row>
           <Col>
             <Last20 last20={this.state.last20}/>
@@ -212,23 +229,6 @@ class GameTable extends Component {
           </Col>
           <Col xs="3" md="3" xl="3">
             <Balance balance={this.state.balance}/>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col xs="12" md="12" xl="12">
-            <Card>
-                <CardBody>
-                    <p>
-                    <Button outline 
-                            color="primary" 
-                            block
-                            onClick={this.spin}
-                            >
-                          Spin!</Button>
-                    </p>
-                </CardBody>
-            </Card>
           </Col>
         </Row>
 
