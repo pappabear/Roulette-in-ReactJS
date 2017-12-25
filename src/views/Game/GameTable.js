@@ -81,7 +81,7 @@ class GameTable extends Component {
 
   spin() 
   {
-      //console.log("User cliked SPIN");
+      console.log("Show the spinning wheel...");
       
       // set the winning number
       var n = Math.floor(Math.random() * 38);
@@ -184,6 +184,9 @@ class GameTable extends Component {
       winningBets: w,
       balance: bal
     });
+
+    console.log("Stop the wheel and show the pocket.");
+    
   }
 
 
