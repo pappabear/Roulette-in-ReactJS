@@ -92,33 +92,98 @@ class GameTable extends Component {
 
       // determine what all the winning bets were based on the pocketed number
       var w = [];
+      var payouts = [];
+      
       w.push(WHEEL[n].toString());
-      if (FIRST12.includes(WHEEL[n]))
-        w.push("FIRST12");
-      if (SECOND12.includes(WHEEL[n]))
-        w.push("SECOND12");
-      if (THIRD12.includes(WHEEL[n]))
-        w.push("THIRD12");
-      if (ODD.includes(WHEEL[n]))
-        w.push("ODD");
-      if (EVEN.includes(WHEEL[n]))
-        w.push("EVEN");
-      if (RED.includes(WHEEL[n]))
-        w.push("RED");
-      if (BLACK.includes(WHEEL[n]))
-        w.push("BLACK");
-      if (FIRSTAVENUE.includes(WHEEL[n]))
-        w.push("FIRSTAVENUE");
-      if (SECONDAVENUE.includes(WHEEL[n]))
-        w.push("SECONDAVENUE");
-      if (THIRDAVENUE.includes(WHEEL[n]))
-        w.push("THIRDAVENUE");
+      payouts.push(36);
 
-    //update the state so it can propogate to the rest of the app
+      if (FIRST12.includes(WHEEL[n]))
+      {
+        w.push("FIRST12");
+        payouts.push(3);
+      }
+      
+      if (SECOND12.includes(WHEEL[n]))
+      {
+        w.push("SECOND12");
+        payouts.push(3);
+      }
+
+      if (THIRD12.includes(WHEEL[n]))
+      {
+        w.push("THIRD12");
+        payouts.push(3);
+      }
+
+      if (ODD.includes(WHEEL[n]))
+      {
+        w.push("ODD");
+        payouts.push(2);
+      }
+
+      if (EVEN.includes(WHEEL[n]))
+      {
+        w.push("EVEN");
+        payouts.push(2);
+      }
+
+      if (RED.includes(WHEEL[n]))
+      {
+        w.push("RED");
+        payouts.push(2);
+      }
+
+      if (BLACK.includes(WHEEL[n]))
+      {
+        w.push("BLACK");
+        payouts.push(2);
+      }
+
+      if (FIRSTAVENUE.includes(WHEEL[n]))
+      {
+        w.push("FIRSTAVENUE");
+        payouts.push(3);
+      }
+
+      if (SECONDAVENUE.includes(WHEEL[n]))
+      {
+        w.push("SECONDAVENUE");
+        payouts.push(3);
+      }
+
+      if (THIRDAVENUE.includes(WHEEL[n]))
+      {
+        w.push("THIRDAVENUE");
+        payouts.push(3);
+      }
+
+
+    // determine if the user had any winning bets
+    var winnings=0;
+    for (var i=0; i<this.state.myBets.length; i++)
+      for (var j=0; j<w.length; j++)
+        if (this.state.myBets[i].bet === w[j])
+        {
+          console.log("You win " + this.state.myBets[i].amount*payouts[j]);
+          winnings += this.state.myBets[i].amount*payouts[j];
+        }
+
+    if (winnings > this.state.myBetsTotal)
+        console.log("YOU WIN!");
+    if (winnings < this.state.myBetsTotal)
+        console.log("YOU LOSE!");
+        
+    // update the users balance
+    var bal = this.state.balance;
+    bal -= this.state.myBetsTotal;
+    bal += winnings;
+
+    // update the state so it can propogate to the rest of the app
     this.setState({
       numberSpun: n,
       last20: l,
-      winningBets: w
+      winningBets: w,
+      balance: bal
     });
   }
 
