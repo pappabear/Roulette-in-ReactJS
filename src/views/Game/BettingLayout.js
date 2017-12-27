@@ -122,16 +122,16 @@ class BettingLayout extends Component {
                                     <Input id='6' name='6' onBlur={this.handleBlur} size="1" type="text" />
                                 </td>
                                 <td style={styleRed}>9
-                                    <Input id='3' name='3' onBlur={this.handleBlur} size="1" type="text" />
+                                    <Input id='9' name='9' onBlur={this.handleBlur} size="1" type="text" />
                                 </td>                                    
                                 <td style={styleRed}>12
                                     <Input id='12' name='12' onBlur={this.handleBlur} size="1" type="text" />
                                 </td>
                                 <td style={styleBlack}>15
-                                <Input id='12' name='12' onBlur={this.handleBlur} size="1" type="text" />
+                                <Input id='15' name='15' onBlur={this.handleBlur} size="1" type="text" />
                                 </td>
                                 <td style={styleRed}>18
-                                    <Input id='15' name='15' onBlur={this.handleBlur} size="1" type="text" />
+                                    <Input id='18' name='18' onBlur={this.handleBlur} size="1" type="text" />
                                 </td>
                                 <td style={styleRed}>21
                                     <Input id='21' name='21' onBlur={this.handleBlur} size="1" type="text" />
@@ -257,6 +257,8 @@ class BettingLayout extends Component {
                                 <td style={style0} colSpan="4">3rd 12
                                     <Input id='THIRD12' name='THIRD12' onBlur={this.handleBlur} size="1" type="text" />
                                 </td>
+                                <td>
+                                </td>
                             </tr>
 
                             <tr>
@@ -271,14 +273,16 @@ class BettingLayout extends Component {
                                 <td style={styleRed} colSpan="2">RED
                                     <Input id='RED' name='RED' onBlur={this.handleBlur} size="1" type="text" />
                                 </td>
-                                <td style={styleBlack} colSpan="2">1-18
-                                    <Input id='FIRST18' name='FIRST18' onBlur={this.handleBlur} size="1" type="text" />
+                                <td style={styleBlack} colSpan="2">BLACK
+                                    <Input id='BLACK' name='BLACK' onBlur={this.handleBlur} size="1" type="text" />
                                 </td>
                                 <td style={style0} colSpan="2">ODD
                                     <Input id='ODD' name='ODD' onBlur={this.handleBlur} size="1" type="text" />
                                 </td>
                                 <td style={style0} colSpan="2">19-36
                                     <Input id='LAST18' name='LAST18' onBlur={this.handleBlur} size="1" type="text" />
+                                </td>
+                                <td>
                                 </td>
                             </tr>
 

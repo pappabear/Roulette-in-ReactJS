@@ -26,6 +26,7 @@ import Last20 from "./Last20.js";
 import Pocket from "./Pocket.js";
 import BettingLayout from "./BettingLayout.js";
 import Balance from "./Balance.js";
+import ReactDOM from 'react-dom';
 import {BETS, WHEEL, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";
 
 const brandPrimary = '#20a8d8';
@@ -82,7 +83,7 @@ class GameTable extends Component {
   spin() 
   {
       console.log("Show the spinning wheel...");
-      
+
       // set the winning number
       var n = Math.floor(Math.random() * 38);
 
@@ -113,6 +114,18 @@ class GameTable extends Component {
       {
         w.push("THIRD12");
         payouts.push(3);
+      }
+
+      if (FIRST18.includes(WHEEL[n]))
+      {
+        w.push("FIRST18");
+        payouts.push(2);
+      }
+
+      if (LAST18.includes(WHEEL[n]))
+      {
+        w.push("LAST18");
+        payouts.push(2);
       }
 
       if (ODD.includes(WHEEL[n]))
@@ -186,7 +199,7 @@ class GameTable extends Component {
     });
 
     console.log("Stop the wheel and show the pocket.");
-    
+
   }
 
 
