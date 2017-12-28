@@ -72,7 +72,7 @@ export default {
     {
       name: 'Start New Game',
       url: '/',
-      icon: 'icon-cloud-download',
+      icon: 'icon-refresh',
       class: 'mt-auto',
       variant: 'success'
     },
