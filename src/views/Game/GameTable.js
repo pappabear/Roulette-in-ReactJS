@@ -64,9 +64,18 @@ class GameTable extends Component {
   {
     var m = this.state.myBets;
     var myBet = {bet: bet, amount: amount};
-    m.push(myBet);
-    //console.log("Updated bet " + bet + " " + amount);
-    //console.log(m.length + " total bets");
+    var updateExistingBet = false;
+
+    for (var i=0; i<m.length; i++)
+      if (m[i].bet == bet)
+      {
+        updateExistingBet = true;
+        m[i].amount = amount;
+      }
+
+    if (!updateExistingBet)
+      m.push(myBet);
+
     this.setState({
       myBets: m
     });

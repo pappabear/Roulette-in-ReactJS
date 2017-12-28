@@ -49,7 +49,7 @@ class BettingLayout extends Component {
 
     handleBlur(e)
     {
-        if (parseInt(e.target.value) > 0)
+        if (parseInt(e.target.value) >= 0)
         {
             console.log("e.target=" + e.target.name + " " + e.target.value);
             this.props.registerMyBet(e.target.name, parseInt(e.target.value));
