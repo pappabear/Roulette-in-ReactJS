@@ -71,7 +71,7 @@ export default {
     },
     {
       name: 'Start New Game',
-      url: 'http://coreui.io/react/',
+      url: '/',
       icon: 'icon-cloud-download',
       class: 'mt-auto',
       variant: 'success'
