@@ -35,8 +35,7 @@ class BettingLayout extends Component {
     constructor(props) {
         super(props);
         this.renderWinningBets = this.renderWinningBets.bind(this);
-        this.renderMyBets = this.renderMyBets.bind(this);
-        this.handleBlur = this.handleBlur.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);        
       }
 
     renderWinningBets()
@@ -44,7 +43,6 @@ class BettingLayout extends Component {
         return this.props.winningBets.map((o, i) =>
             <li key={i}>{o}</li>
         )
-  
     }
 
     handleBlur(e)
@@ -54,25 +52,6 @@ class BettingLayout extends Component {
             console.log("e.target=" + e.target.name + " " + e.target.value);
             this.props.registerMyBet(e.target.name, parseInt(e.target.value));
         }
-    }
-
-    renderMyBets()
-    {
-        return BETS.map((o, i) =>
-            <FormGroup key={i}>
-                <div className="controls">
-                    <InputGroup className="input-prepend">
-                        <InputGroupAddon>{o}</InputGroupAddon>
-                        <Input id={o}
-                               name={o}
-                               onBlur={this.handleBlur} 
-                               size="2" 
-                               type="text"
-                               />
-                    </InputGroup>
-                </div>
-            </FormGroup>
-        )
     }
 
 
@@ -105,8 +84,19 @@ class BettingLayout extends Component {
             <CardBody>
                 <Row>
                     <Col xs="12" md="12" xl="12">
-                        Your bet(s) this round:
-                        <h3>$ {this.props.myBetsTotal}</h3>
+                        <Row>
+                        <Col xs="6" md="6" xl="6">
+                            Your bet(s) this round:
+                            <h3>$ {this.props.myBetsTotal}</h3>
+                        </Col>
+                        <Col xs="6" md="6" xl="6">
+                            <Button outline 
+                                color="primary" 
+                                onClick={this.props.clearAllBets}
+                                >
+                            Clear all bets</Button>
+                        </Col>
+                        </Row>
 
                         <table width="100%" border="0" cellPadding="5x">
                             <tbody>

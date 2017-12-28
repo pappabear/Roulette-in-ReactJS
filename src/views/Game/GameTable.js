@@ -42,6 +42,7 @@ class GameTable extends Component {
     this.toggle = this.toggle.bind(this);
     this.spin = this.spin.bind(this);
     this.registerMyBet = this.registerMyBet.bind(this);
+    this.clearAllBets = this.clearAllBets.bind(this);
     this.state = {
       dropdownOpen: false,
       numberSpun: '',
@@ -53,12 +54,14 @@ class GameTable extends Component {
     };
   }
 
+
   toggle() 
   {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
     });
   }
+
 
   registerMyBet(bet, amount)
   {
@@ -83,11 +86,22 @@ class GameTable extends Component {
     var t=0;
     for (var i=0; i<this.state.myBets.length; i++)
       t += this.state.myBets[i].amount;
+    
     this.setState({
       myBetsTotal: t
       });
-  
   }
+
+
+  clearAllBets()
+  {
+      for (var i=0; i<BETS.length; i++)
+      {
+          this.registerMyBet(BETS[i], 0);
+          document.getElementById(BETS[i]).value="";
+      }
+  }
+
 
   spin() 
   {
@@ -232,6 +246,7 @@ class GameTable extends Component {
             <BettingLayout winningBets={this.state.winningBets}
                            registerMyBet={this.registerMyBet}
                            myBetsTotal={this.state.myBetsTotal}
+                           clearAllBets={this.clearAllBets}
                  />
           </Col>
         </Row>
