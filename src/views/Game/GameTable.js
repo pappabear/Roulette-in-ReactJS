@@ -26,7 +26,7 @@ import Last20 from "./Last20.js";
 import Pocket from "./Pocket.js";
 import BettingLayout from "./BettingLayout.js";
 import Balance from "./Balance.js";
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import {BETS, WHEEL, COLORS, FIRST12, SECOND12, THIRD12, ODD, EVEN, FIRST18, LAST18, RED, BLACK, FIRSTAVENUE, SECONDAVENUE, THIRDAVENUE} from "./Constants.js";
 
 const brandPrimary = '#20a8d8';
@@ -52,7 +52,8 @@ class GameTable extends Component {
       myBets: [],
       myBetsTotal: 0,
       balance: 200,
-      broke: false
+      broke: false,
+      record: []
     };
   }
 
@@ -205,10 +206,27 @@ class GameTable extends Component {
           winnings += this.state.myBets[i].amount*payouts[j];
         }
 
+    var gameDecision = {decision:'', amount:''};
+    var record = this.state.record;
     if (winnings > this.state.myBetsTotal)
-        console.log("YOU WIN!");
+    {
+      gameDecision.decision = "Win";
+      gameDecision.amount = winnings;
+      record.push(gameDecision);
+    }
+        
     if (winnings < this.state.myBetsTotal)
-        console.log("YOU LOSE!");
+    {
+      gameDecision.decision = "Loss";
+      gameDecision.amount = winnings;
+      record.push(gameDecision);
+    }
+
+    // update the state so it can propogate to the rest of the app
+    this.setState({
+      record: record
+    });
+    
         
     // update the users balance
     var bal = this.state.balance;
