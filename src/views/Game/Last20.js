@@ -30,6 +30,8 @@ class Last20 extends Component {
         var color='';
         var o=[];
 
+        console.log("this.props.last20.length=" + this.props.last20.length);
+
         return this.props.last20.map((o, i) =>
             <Badge pill color={this.getColor(o)} key={i} >{WHEEL[o]}</Badge>
         )

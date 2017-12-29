@@ -22,6 +22,7 @@ class Aside extends Component {
 
   render() {
     return (
+      
       <aside className="aside-menu">
         <Nav tabs>
           <NavItem>
@@ -46,7 +47,7 @@ class Aside extends Component {
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
             <div className="callout m-0 py-2 text-muted text-center bg-light text-uppercase">
-              <small><b>Today</b></small>
+              <small><b>Today</b></small><p>Games played={this.props.record.length}</p>
             </div>
             <hr className="transparent mx-3 my-0"/>
             <div className="callout callout-warning m-0 py-3">
