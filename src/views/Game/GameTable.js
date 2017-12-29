@@ -20,7 +20,7 @@ import {
   ButtonDropdown,
   Label,
   Input,
-  Table
+  Table, Modal, ModalHeader, ModalBody, ModalFooter, NavLink
 } from 'reactstrap';
 import Last20 from "./Last20.js";
 import Pocket from "./Pocket.js";
@@ -43,6 +43,7 @@ class GameTable extends Component {
     this.spin = this.spin.bind(this);
     this.registerMyBet = this.registerMyBet.bind(this);
     this.clearAllBets = this.clearAllBets.bind(this);
+    
     this.state = {
       dropdownOpen: false,
       numberSpun: '',
@@ -50,7 +51,8 @@ class GameTable extends Component {
       winningBets: [],
       myBets: [],
       myBetsTotal: 0,
-      balance: 200
+      balance: 200,
+      broke: false
     };
   }
 
@@ -221,6 +223,11 @@ class GameTable extends Component {
       balance: bal
     });
 
+    if (bal <= 0)
+      this.setState({
+        broke: true
+      });
+      
     console.log("Stop the wheel and show the pocket.");
 
   }
@@ -267,6 +274,17 @@ class GameTable extends Component {
             </Card>
           </Col>
         </Row>
+
+        <Modal isOpen={this.state.broke} 
+                       className={'modal-danger ' + this.props.className}>
+                  <ModalHeader>Game Over</ModalHeader>
+                  <ModalBody>
+                    Your balance has gone to $0.
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button color="success" href="/" >Start New Game</Button>{' '}
+                  </ModalFooter>
+                </Modal>
 
       </div>
     )
