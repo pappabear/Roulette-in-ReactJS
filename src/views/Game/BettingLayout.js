@@ -59,13 +59,13 @@ class BettingLayout extends Component {
 
     var style0 = {
         textAlign: 'center',
-        backgroundColor: 'green',
+        backgroundColor: '#4dbd74',
         color: 'white',
         fontWeight: 'bold'
         };
     var styleRed = {
         textAlign: 'center',
-        backgroundColor: 'red',
+        backgroundColor: '#f86c6b',
         color: 'white',
         fontWeight: 'bold'
         };

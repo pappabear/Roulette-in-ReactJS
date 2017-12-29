@@ -39,8 +39,8 @@ class GameTable extends Component {
 
   render() {
 
-    console.log("Balance=" + this.props.balance);
-    console.log("Number of bets=" + this.props.last20.length);
+    //console.log("Balance=" + this.props.balance);
+    //console.log("Number of bets=" + this.props.last20.length);
 
     return (
       <div className="animated fadeIn">
