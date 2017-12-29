@@ -85,11 +85,11 @@ class BettingLayout extends Component {
                 <Row>
                     <Col xs="12" md="12" xl="12">
                         <Row>
-                        <Col xs="6" md="6" xl="6">
+                        <Col xs="9" md="9" xl="9">
                             Your bet(s) this round:
                             <h3>$ {this.props.myBetsTotal}</h3>
                         </Col>
-                        <Col xs="6" md="6" xl="6">
+                        <Col xs="3" md="3" xl="3">
                             <Button outline 
                                 color="primary" 
                                 onClick={this.props.clearAllBets}

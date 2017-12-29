@@ -76,11 +76,5 @@ export default {
       class: 'mt-auto',
       variant: 'success'
     },
-    {
-      name: 'Kill All Humans',
-      url: 'http://coreui.io/pro/react/',
-      icon: 'icon-layers',
-      variant: 'danger'
-    }
   ]
 };
